@@ -24,6 +24,7 @@ Start Miimo either directly or via starter script.
 Default locations/execution:
 
 python /usr/share/miimo.py 
+
 sh /usr/share/starter.sh
 
 If needed make the programs executable with chmod +x something.sh OR chmod +x something.py
