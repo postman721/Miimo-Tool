@@ -1,4 +1,4 @@
-#1/bin bash
+#!/bin bash
 #This is the Miimo_tool starter script. Copyright (C) 2015 JJ Posti from techtimejourney.net
 #This program comes with ABSOLUTELY NO WARRANTY; for details see: 
 #http://www.gnu.org/copyleft/gpl.html
