@@ -4,16 +4,16 @@ import glob, tarfile, zipfile, os, bz2, gzip, sys, subprocess ,time, shutil
 enter = ("Please press Enter to exit")
 
 def start ():
-	print ""	
+	print ("")	
 	print ("Welcome to Miimo Tool Version B (Revision 2) Copyright (C) 2015 JJ Posti") 
 	print ("from techtimejourney.net") 
-	print ""
+	print ("")
 	print ("This program comes with ABSOLUTELY NO WARRANTY; for details see:") 
 	print ("http://www.gnu.org/copyleft/gpl.html")
-	print ""
+	print ("")
 	print ("This is free software, and you are welcome to redistribute it")
 	print ("under GPL Version 3, 29 June 2007.")
-	print ""
+	print ("")
 	choice = raw_input ("Continue? y/n ")
 	if choice == "y":
 		selection ()
@@ -58,11 +58,11 @@ def archives ():
 	time.sleep (1)
 	print ""				
 	if types == "1": 
-		print ""
-		print ""
+		print ("")
+		print ("")
 		files = glob.glob('./*.gz')
 		print files
-		print ""
+		print ("")
 		time.sleep (1)
 		decom=raw_input("What file you want to decompress? ")
 		print ""
@@ -71,54 +71,54 @@ def archives ():
 		gets0=tarfile.open("%s" % decom , 'r:gz')
 		gets0
 		print ("Now decompressing:") ,  decom
-		print ""
+		print ("")
 		print ("The following content is now available inside decompressed direcory")
-		print ""
+		print ("")
 		gets0.extractall('decompressed')
 		print os.listdir('decompressed')
 		print ""
 		print "All done. Time to exit"			
 	elif types == "2": 
-		print ""
-		print ""
+		print ("")
+		print ("")
 		files = glob.glob('./*.bz2')
 		print files
-		print ""
+		print ("")
 		time.sleep (1)
 		decom=raw_input("What file you want to decompress? ")
-		print ""
+		print ("")
 		print ("tar.bz2 decompress")
 		time.sleep (1)
 		gets0=tarfile.open("%s" % decom , 'r:bz2')
 		gets0
 		print ("Now decompressing:") ,  decom
-		print ""
+		print ("")
 		print ("The following content is now available inside decompressed direcory")
-		print ""
+		print ("")
 		gets0.extractall('decompressed')
 		print os.listdir('decompressed')
-		print ""
+		print ("")
 		print "All done. Time to exit"	
 	elif types == "3": 
-		print ""
-		print ""
+		print ("")
+		print ("")
 		files = glob.glob('./*.zip')
 		print files
-		print ""
+		print ("")
 		time.sleep (1)
 		decom=raw_input("What file you want to decompress? ")
-		print ""
+		print ("")
 		print ("zip decompress")
 		time.sleep (1)
 		gets0=zipfile.ZipFile("%s" % decom ,)
 		gets0
 		print ("Now decompressing:") ,  decom
-		print ""
+		print ("")
 		print ("The following content is now available inside decompressed direcory")
-		print ""
+		print ("")
 		gets0.extractall('decompressed')
 		print os.listdir('decompressed')
-		print ""
+		print ("")
 		print "All done. Time to exit"
 	else:
 		print ("Incorrect key selection")
@@ -129,93 +129,93 @@ def compre ():
 	bz2 ="2"
 	zip ="3"
 	zip ="4"
-	print ""
-	print ""
-	print ""
+	print ("")
+	print ("")
+	print ("")
 	types=raw_input("Select compression format: 1.tar.gz 2. tar.bz2 3. zip(files) 4.zip(folder) ? ")
-	print ""
+	print ("")
 	time.sleep (1)
-	print ""
+	print ("")
 	if types == "1":
-		print ""
+		print ("")
 		print ("tar.gz compress")
 		time.sleep (1)
-		print ""
+		print ("")
 		files = os.listdir(os.curdir) 
 		print files
-		print ""
+		print ("")
 		decom=raw_input("What you want to compress? ")
-		print ""
-		print ""
+		print ("")
+		print ("")
 		gets0=tarfile.open("%s.tar.gz" % decom , 'w:gz')
 		gets0
 		for name in [decom]:
 			gets0.add(name)
 		gets0.close()
 		print ("Now compressing:") ,  decom
-		print ""
+		print ("")
 		print ("The following tar.gz content is now available inside the current direcory")
 		print ""
 		files1 = glob.glob('./*.gz')
 		print files1	
 	elif types == "2":
-		print ""
+		print ("")
 		print ("tar.bz2 compress")
 		time.sleep (1)
-		print ""
+		print ("")
 		files = os.listdir(os.curdir) 	
 		print files
-		print ""
+		print ("")
 		decom=raw_input("What you you want to compress? ")
-		print ""
-		print ""
+		print ("")
+		print ("")
 		gets0=tarfile.open("%s.tar.bz2" % decom , 'w:bz2')
 		for name in [decom]:
 			gets0.add(name)
 		gets0.close()
 		print ("Now compressing:") ,  decom
-		print ""
+		print ("")
 		print ("The following bz2 content is now available inside the current direcory")
-		print ""
+		print ("")
 		files1 = glob.glob('./*.bz2')
 		print files1	
 	elif types == "3":
-		print ""
+		print ("")
 		print ("zip compress")
 		time.sleep (1)
-		print ""
+		print ("")
 		files = os.listdir(os.curdir) 
 		print files
-		print ""
+		print ("")
 		decom=raw_input("What you you want to compress? ")
-		print ""
-		print ""
+		print ("")
+		print ("")
 		gets0=zipfile.ZipFile("%s.zip" % decom , mode='w')
 		for name in [decom]:
 			gets0.write(name)
 		gets0.close()
 		print ("Now compressing:") ,  decom
-		print ""
+		print ("")
 		print ("The following zip content is now available inside the current direcory")
-		print ""
+		print ("")
 		files1 = glob.glob('./*.zip')
 		print files1	
 	elif types == "4":
-		print ""
+		print ("")
 		print ("zip compress")
 		time.sleep (1)
-		print ""
+		print ("")
 		files = os.listdir(os.curdir) 
 		print files
-		print ""
+		print ("")
 		decom=raw_input("What you you want to compress? ")
-		print ""
-		print ""
+		print ("")
+		print ("")
 		os.chdir (decom)
 		shutil.make_archive(os.getcwd(), 'zip')
 		
 		print ("Now compressing:") ,  decom
-		print ""
+		print ("")
 		print ("The zip content should now be available inside your home direcory")
 		
 	else:
